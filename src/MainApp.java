@@ -1,18 +1,20 @@
+import zadanie_03.Bug;
+
 public class MainApp {
     public static void main(String[] args) {
-        Bug bug01 = new Bug("User can to log in with incorrect password", "tester@project.com", 5);
+        Bug bug01 = new Bug("User is able to log in with incorrect password", "tester@project.com", 5);
+
+        bug01.setBugDescription("123456789");
+        System.out.println("Bug description: " + bug01.getBugDescription());
 
         System.out.println("---");
-        bug01.showBugInfo();
-        bug01.showEmail();
-        bug01.showStatus();
-        int bugPriority = bug01.getPriority();
-        System.out.println(bugPriority);
 
+        bug01.setEmail("tester--email.pl");
+        System.out.println(bug01.getEmail());
         System.out.println("---");
-        bug01.statusOpen = false;
-        bug01.showBugInfo();
 
-        System.out.println("---");
+        bug01.setBugPriority(-1);
+        System.out.println(bug01.getBugPriority());
+
     }
 }
