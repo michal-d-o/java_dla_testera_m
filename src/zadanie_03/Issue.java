@@ -1,13 +1,13 @@
 package zadanie_03;
 
-public class Bug {
+public class Issue {
 
     private String bugDescription;
     private String email;
     private int bugPriority;
     private boolean statusOpen;
 
-    public Bug(String description, String email, int priority) {
+    public Issue(String description, String email, int priority) {
         this.bugDescription = description;
         this.email = email;
         this.bugPriority = priority;
@@ -62,7 +62,7 @@ public class Bug {
 
     //
     public void showBugInfo() {
-        System.out.println("zadanie_03.Bug: " + bugDescription + ", " + email + ", " + bugPriority + ", zadanie_03.Bug status 'open'- " + statusOpen);
+        System.out.println("zadanie_07.Bug: " + bugDescription + ", " + email + ", " + bugPriority + ", zadanie_07.Bug status 'open'- " + statusOpen);
     }
 
     public void showEmail() {
@@ -72,5 +72,6 @@ public class Bug {
     public void showStatus() {
         System.out.println("Is status 'open'? - " + statusOpen);
     }
+
 
 }
