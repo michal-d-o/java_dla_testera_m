@@ -1,8 +1,9 @@
-import zadanie_03.Bug;
+import zadanie_03.Issue;
+import zadanie_07.Bug;
 
 public class MainApp {
     public static void main(String[] args) {
-        Bug bug01 = new Bug("User is able to log in with incorrect password", "tester@project.com", 5);
+        Issue bug01 = new Issue("User is able to log in with incorrect password", "tester@project.com", 5);
 
         bug01.setBugDescription("123456789");
         System.out.println("Bug description: " + bug01.getBugDescription());
