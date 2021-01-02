@@ -1,4 +1,4 @@
-package zadanie_07;
+package zadanie_07and08;
 // 1- BugReporter + (firstName, last, email), + 3 (toString, equals, hashCode)
 
 import java.util.Objects;

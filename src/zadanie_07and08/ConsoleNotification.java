@@ -1,4 +1,4 @@
-package zadanie_07;
+package zadanie_07and08;
 
 public interface ConsoleNotification {
 

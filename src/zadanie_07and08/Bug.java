@@ -1,9 +1,8 @@
-package zadanie_07;
+package zadanie_07and08;
 
-// 2 - interface ConsoleNotification -> notifyStatusChange;
-// 3- Bug - toString
+import java.util.Objects;
 
-public class Bug implements ConsoleNotification {
+public class Bug implements ConsoleNotification, Comparable<Bug> {
 
     protected String bugDescription;
     protected int bugPriority;
@@ -77,4 +76,25 @@ public class Bug implements ConsoleNotification {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bug bug = (Bug) o;
+        return bugPriority == bug.bugPriority &&
+                statusOpen == bug.statusOpen &&
+                Objects.equals(bugDescription, bug.bugDescription) &&
+                Objects.equals(tester, bug.tester);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bugDescription, bugPriority, statusOpen, tester);
+    }
+
+    @Override
+    public int compareTo(Bug bug) {
+        int compareResult = this.getBugDescription().compareTo(bug.getBugDescription());
+        return compareResult;
+    }
 }
