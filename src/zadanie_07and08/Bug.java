@@ -61,6 +61,18 @@ public class Bug implements ConsoleNotification, Comparable<Bug> {
         System.out.println("Is status 'open'? - " + statusOpen);
     }
 
+    public String getBugReporterFirstName() {
+        return tester.firstName;
+    }
+
+    public String getBugReporterLastName() {
+        return tester.lastName;
+    }
+
+    public String getBugReporterEmail() {
+        return tester.email;
+    }
+
 
     @Override
     public void notifyStatusChange() {
