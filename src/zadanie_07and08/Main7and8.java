@@ -39,11 +39,12 @@ public class Main7and8 {
         System.out.println("-- Sorted using bug description field: ");
         Set<Bug> sortedBugs = new TreeSet<>(bugs);
 
+
+        System.out.println("--- Sorted using showBugAndBugReporter method: ");
         for (Bug bug : sortedBugs) {
-            System.out.println(bug.getBugDescription() + " - " + bug.getBugPriority() + ", "
-                    + bug.getBugReporterFirstName() + " " + bug.getBugReporterLastName() + ", "
-                    + bug.getBugReporterEmail());
+            bug.showBugAndBugReporter();
         }
+
 
     }
 }
