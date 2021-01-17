@@ -32,13 +32,12 @@ public class Main7and8 {
         bugs.add(new Bug("A UI issues with buttons on homepage", 2, mike));
         bugs.add(new Bug("Just a minor bug with UI on Privacy Policy page", 1, mike));
 
-        for (Bug bug : bugs) {
+
+        Set<Bug> sortedBugs = new TreeSet<>(bugs);
+        System.out.println("-- Sorted using bug description field: ");
+        for (Bug bug : sortedBugs) {
             System.out.println(bug.getBugDescription() + " - " + bug.getBugPriority());
         }
-
-        System.out.println("-- Sorted using bug description field: ");
-        Set<Bug> sortedBugs = new TreeSet<>(bugs);
-
 
         System.out.println("--- Sorted using showBugAndBugReporter method: ");
         for (Bug bug : sortedBugs) {
