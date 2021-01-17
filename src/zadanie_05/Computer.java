@@ -1,14 +1,16 @@
 package zadanie_05;
 
+import java.util.Objects;
+
 public class Computer {
 
     protected String name;
     protected String type;
-    protected int disc;
-    protected int ram;
+    protected HDD disc;
+    protected RAM ram;
     protected boolean state;
 
-    public Computer(String name, String type, int disc, int ram) {
+    public Computer(String name, String type, HDD disc, RAM ram) {
         this.name = name;
         this.type = type;
         this.disc = disc;
@@ -32,19 +34,24 @@ public class Computer {
         this.type = type;
     }
 
-    public int getDisc() {
+    public HDD getDisc() {
         return disc;
     }
 
-    public void setDisc(int disc) {
+    public void setDisc(HDD disc) {
         this.disc = disc;
     }
 
-    public int getRam() {
+    public RAM getRam() {
         return ram;
     }
 
-    public void setRam(int ram) {
+    public void showRamSize() {
+        System.out.println(ram.getSize());
+    }
+
+
+    public void setRam(RAM ram) {
         this.ram = ram;
     }
 
@@ -61,4 +68,31 @@ public class Computer {
         return state;
     }
 
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", disc=" + disc +
+                ", ram=" + ram +
+                ", state=" + state +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Computer computer = (Computer) o;
+        return state == computer.state &&
+                Objects.equals(name, computer.name) &&
+                Objects.equals(type, computer.type) &&
+                Objects.equals(disc, computer.disc) &&
+                Objects.equals(ram, computer.ram);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, type, disc, ram, state);
+    }
 }

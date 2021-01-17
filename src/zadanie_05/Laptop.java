@@ -4,7 +4,7 @@ public class Laptop extends Computer{
 
     private int batteryLevel;
 
-    public Laptop(String name, String type, int disc, int ram, int batteryLevel) {
+    public Laptop(String name, String type, HDD disc, RAM ram, int batteryLevel) {
         super(name, type, disc, ram);
         this.batteryLevel = batteryLevel;
     }
