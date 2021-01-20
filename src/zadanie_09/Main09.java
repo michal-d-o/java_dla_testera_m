@@ -73,13 +73,13 @@ public class Main09 {
         if (bigDiscs.isEmpty()) {
             System.out.println("No such elements found");
         } else {
-            for (Computer comp : smallDiscs) {
+            for (Computer comp : bigDiscs) {
                 System.out.println(comp.getName() + ", Disc size:  " + comp.getDisc().getSize());
             }
         }
 
         // Optional 07
-        System.out.println("Ist there any name = Laptop");
+        System.out.println("Is there any name like Laptop?");
         String nameLaptop = computers.stream()
                 .map(Computer::getName)
                 .filter(s -> s.equals("Laptop"))
