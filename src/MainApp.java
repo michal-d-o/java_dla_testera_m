@@ -1,5 +1,4 @@
 import zadanie_03.Issue;
-import zadanie_07.Bug;
 
 public class MainApp {
     public static void main(String[] args) {
