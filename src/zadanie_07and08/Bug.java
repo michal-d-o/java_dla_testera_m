@@ -1,5 +1,7 @@
 package zadanie_07and08;
 
+import exceptions.IllegalBugPriorityException;
+
 import java.util.Objects;
 
 public class Bug implements ConsoleNotification, Comparable<Bug> {
@@ -33,13 +35,15 @@ public class Bug implements ConsoleNotification, Comparable<Bug> {
         return bugPriority;
     }
 
-    public void setBugPriority(int bugPriority) {
+    public void setBugPriority(int bugPriority) throws IllegalBugPriorityException {
         if (bugPriority < 6 && bugPriority > 0) {
             this.bugPriority = bugPriority;
         } else {
-            System.out.println("Error - bug priority has to be a single digit between 1 and 5.");
+            throw new IllegalBugPriorityException("Incorrect bug priority! Use range 1-5 instead");
         }
     }
+
+
 
     public boolean isStatusOpen() {
         return statusOpen;
